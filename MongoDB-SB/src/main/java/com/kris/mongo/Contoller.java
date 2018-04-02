@@ -23,7 +23,14 @@ public class Contoller {
 	@RequestMapping(value="/addCust",method=RequestMethod.POST)
 	public String addCustomer(String firstname,String lastname)
 	{
-		repository.save(new Customer(firstname,lastname));
+		try
+		{
+			repository.save(new Customer(firstname,lastname));
+		}
+		catch(Exception e)
+		{
+			String.format("Data not saved with provided %s", e.getMessage());
+		}
 		return String.format("Data saved Successfully with provided FN: %s and LN: %s", firstname,lastname);
 		 
 	}
