@@ -14,19 +14,4 @@ public class ResponseWrapper {
 		this.customerlist = customerlist;
 	}
 
-	@Override
-	public String toString() {
-		
-		for(Customer cust : customerlist)
-		{
-			if(cust != null)
-			{
-				return String.format("Customer : %s", cust.toString());
-			}
-		}
-		return null;
-	}
-	
-	
-
 }

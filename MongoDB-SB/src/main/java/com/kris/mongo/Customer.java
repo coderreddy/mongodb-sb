@@ -1,5 +1,8 @@
 package com.kris.mongo;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection="customer_table")
 public class Customer {
 	
 	private String id;
@@ -8,13 +11,19 @@ public class Customer {
 	
 	private String lastname;
 	
-	public Customer(String firstname,String lastname)
-	{
-		this.firstname = firstname;
-		this.lastname = lastname;
+	private Address address;
+	
+	
+	public Address getAddress() {
+		return address;
 	}
 
-	
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
+
 	public String getId() {
 		return id;
 	}
@@ -47,7 +56,7 @@ public class Customer {
 
 	@Override
 	public String toString() {
-		return String.format("{\"FirstName\" : \"%s\", \"LastName\" : \"%s\"}", firstname,lastname);
+		return String.format("{\"FirstName\" : \"%s\", \"LastName\" : \"%s\", \"Address\" : \"%s\"}", firstname,lastname,address.toString());
 	}
 	
 	
