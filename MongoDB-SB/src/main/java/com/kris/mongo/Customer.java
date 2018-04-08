@@ -2,7 +2,7 @@ package com.kris.mongo;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection="customer_table")
+@Document(collection="Customer_Table")
 public class Customer {
 	
 	private String id;

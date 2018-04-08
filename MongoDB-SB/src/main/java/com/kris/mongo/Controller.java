@@ -33,8 +33,10 @@ public class Controller {
 	@RequestMapping(value="/addCust",method=RequestMethod.POST)
 	public String addCustomer(@RequestBody(required=true) Customer cust)
 	{
-		try{
-			mongoTemplate.save(cust,"customer_table");
+		try
+		{
+			//mongoTemplate.save(cust,"customer_table");
+			repository.save(cust);
 		}
 		catch(Exception e)
 		{

@@ -11,5 +11,8 @@ public interface CustomerRepository extends MongoRepository<Customer,String>{
 	public Customer findByFirstname(String firstname);
 	
 	public List<Customer> findByLastname(String lastname);
+	
+	/*@SuppressWarnings("unchecked")
+	public Customer save(Customer customer);*/
 
 }
